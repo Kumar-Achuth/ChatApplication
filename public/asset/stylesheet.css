@@ -1,14 +1,15 @@
-body{
-    background-color:white
+body
+{
+    background-color:lightblue
 }
-p{
+
+p
+{
     font-family: 'Arial', Helvetica, sans-serif;
     size: 40px;
     color :black
 }
-.header img
+#logo
 {
-    float: left;
-    width: 20px;
-    height: 20px;
+    font-style: italic;
 }

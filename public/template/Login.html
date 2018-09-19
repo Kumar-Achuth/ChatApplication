@@ -4,21 +4,30 @@
 <head>
     <title> Login Page </title>
 </head>
-<link rel="stylesheet" href="/home/bridgeit/Documents/ChatApp/public/asset/stylesheet.css">
-<p> ChatApp <div class="header"><img src="/home/bridgeit/Documents/ChatApp/public/template/images.png"> </div>
-</p>
+<body>
+<link rel="stylesheet" href="../asset/stylesheet.css">
+<div id="logo">
+        <p>ChatApp <img src="images.png" alt="image not found" height=":20px" width="20px"> </p>
+    </div>
+
 <center>
+    <br><br><br><br>
     <p>
         <h1>
             <p>Login</p>
         </h1></b>
     </p>
     <form>
-        <p style="font-family: 'Arial'">EMAIL ID : <input type="text" placeholder=" emailid"></p>
+        <p style="font-family: 'Arial'">EMAIL ID : <input type="text" placeholder=" emailid" required></p>
         <br>
-        <p style="font-family: 'Arial '"> PASSWORD : <input type="password" placeholder="password"></p>
+        <p style="font-family: 'Arial '"> PASSWORD : <input type="password" placeholder="password" required></p>
+        <br>
         <button type="button">Login</button>
+        <br>
+        <div id="g">
+                <a href='Registration.html'> <button type="button"> Sign Up</button> </a>
+            </div>
     </form>
-</center>
-
+</center> 
+</body>   
 </html>
