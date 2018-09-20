@@ -1,8 +1,7 @@
 body
 {
-    background-color:lightblue
-}
-
+        background-image: url("../template/back.jpg")  
+}   
 p
 {
     font-family: 'Arial', Helvetica, sans-serif;
