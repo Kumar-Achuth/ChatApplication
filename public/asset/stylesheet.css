@@ -1,6 +1,6 @@
 body
 {
-        background-image: url("../template/back.jpg")  
+        background-image: url("../asset/Images/back.jpg")  
 }   
 p
 {
@@ -11,4 +11,10 @@ p
 #logo
 {
     font-style: italic;
+}
+label
+{
+display : inline-block;
+width  : 140px;
+text-align: justify
 }

@@ -1,42 +1,38 @@
-<!DOCTYPE html>
-<html>
+<div>
 
-<head>
-    <title> Chat Application </title>
-</head>
+    <div id="logo">
+        <p>ChatApp <img src="../asset/Images/images.png" alt="image not found" height=":50px" width="50px"> </p>
+    </div>
+    <link rel="stylesheet" href="../asset/stylesheet.css">
+    <center>
+        <h1>
+            <p>NEW REGISTRATION </p>
+        </h1>
+        <h3>
+            <p>ACCOUNT CREATION </p>
+        </h3>
+        <br>
 
-<body>
-    <div>
+        <form>
+            <!-- <fieldset>
+                        <legend> Sign up </legend> -->
 
-        <div id="logo">
-            <p>ChatApp <img src="../public/template/images.png" alt="image not found" height=":50px" width="50px"> </p>
-        </div>
-        <link rel="stylesheet" href="../asset/stylesheet.css">
-        <center>
-            <h1>
-                <p>NEW REGISTRATION </p>
-            </h1>
-            <h3>
-                <p>ACCOUNT CREATION </p>
-            </h3>
+            <p><label>FIRST NAME</label> : <input type="text" placeholder="FIRSTNAME" ng-model="user.firstname" required></p>
             <br>
-            <form>
-                <p>FIRST NAME : <input type="text" placeholder="FIRSTNAME" required></p>
-                <br>
-                <p>LAST NAME : <input type="text" placeholder="LASTNAME" required></p>
-                <br>
-                <p>MAIL ID : <input type="text" placeholder="jeeva@gmail.com" required></p>
-                <br>
-                <p>PHONE NUMBER : <input type="number" placeholder="PHONE NUMBER"></p>
-                <br>
-                <p>CREATE PASSWORD : <input type="password" placeholder="Password" required></p>
-                <br>
-                <button type="Reset" value=>Reset </button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                <a href='#!/Login'> <button type="button"> Submit</button> </a>
-                <br><br>
-            </form>
-        </center>
-</body>
-</div>
+            <p><label>LAST NAME</label> : <input type="text" placeholder="LASTNAME" ng-model="user.lastname" required></p>
+            <br>
+            <p> <label>MAIL ID</label> : <input type="text" placeholder="ex : jeeva@gmail.com" ng-model="user.email" required></p>
+            <br>
+            <p><label>PHONE NUMBER</label> : <input type="number" placeholder="PHONE NUMBER" ng-model="user.mobile "required></p>
+            <br>
+            <p><label>CREATE PASSWORD</label> : <input type="password" placeholder="Password" ng-model="user.password" required></p>
+            <br>
+            <button type="Reset" value=>Reset </button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <a href='#/Login'> <button type="button" ng-click = "register()"> Submit</button> </a>
+            <br><br>
+            <!-- </fieldset> -->
+        </form>
 
-</html>
+    </center>
+    <!-- </body> -->
+</div>

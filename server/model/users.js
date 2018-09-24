@@ -1,25 +1,17 @@
 var mongoose = require("mongoose");
+
 //var connect= require('../config/config');
 mongoose.connect('mongodb://localhost:27017/demoDb', { useNewUrlParser: true });
 // create instance of Schema
 var mongoSchema = mongoose.Schema;
 // create schema
 var userSchema = new mongoSchema({
-        'fname': {
+        'firstname': {
                 type: String,
                 required: true
         },
-        'mname': {
+        'lastname': {
                 type: String,
-                required: true
-        },
-        'lname': {
-                type: String,
-                required: true
-        },
-        'age': {
-                type: Number,
-                min: 18,
                 required: true
         },
         'mobile': {
@@ -32,7 +24,7 @@ var userSchema = new mongoSchema({
         },
         'password': {
                 type: String,
-                required: true
+                required: false
         }
 });
 // create model if not exists.

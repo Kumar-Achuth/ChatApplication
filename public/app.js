@@ -1,6 +1,6 @@
-var routerApp = angular.module('ChatApp', ['ui.router']);
+var ChatApp = angular.module('ChatApp', ['ui.router','registerController', 'loginController']);
 
-routerApp.config(function ($stateProvider, $urlRouterProvider) {
+ChatApp.config(function ($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/Login');
 
@@ -8,10 +8,12 @@ routerApp.config(function ($stateProvider, $urlRouterProvider) {
 
         .state('Registration', {
             url: '/Registration',
-            templateUrl: 'template/Registration.html'
+            templateUrl: 'template/Registration.html',
+            controller : 'registerCntrl'
         })
         .state('Login', {
             url: '/Login',
-            templateUrl: 'template/Login.html'
+            templateUrl: 'template/Login.html',
+            controller : 'loginCntrl'
         })
 });

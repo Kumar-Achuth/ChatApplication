@@ -1,38 +1,40 @@
-<!DOCTYPE html>
-<html>
+<!-- <!DOCTYPE html> -->
+<!-- <html> -->
 
-<head>
+<!-- <head>
     <title> Login Page </title>
-</head>
+</head> -->
 
-<body>
+<!-- <body> -->
+<div>
+    <link rel="stylesheet" href="../asset/stylesheet.css">
+
+
     <div>
-        <link rel="stylesheet" href="../asset/stylesheet.css">
-
-
-        <div>
-            <p> ChatApp <img src="../public/template/images.png" alt="image not found" height=":50px" width="50px"> </p>
-        </div>
-        <center>
-            <br><br><br><br>
-            <p>
-                <h1>
-                    <p>Login</p>
-                </h1></b>
-            </p>
-            <form>
-                <p style="font-family: 'Arial'">EMAIL ID : <input type="text" placeholder=" emailid" required></p>
-                <br>
-                <p style="font-family: 'Arial '"> PASSWORD : <input type="password" placeholder="password" required></p>
-                <br>
-                <button type="button">Login</button>
-                <br>
-                <div id="g">
-                    <a href="#!/Registration"><br> <button type="button"> Sign Up</button> </a>
-                </div>
-            </form>
-        </center>
+        <p> ChatApp <img src="../asset/Images/images.png" alt="image not found" height=":50px" width="50px"> </p>
     </div>
-</body>
+    <center>
+        <br><br><br>
+        <p>
+            <h1>
+                <p>Login</p>
+            </h1></b>
+        </p>
+        <form>
+            <!-- <fieldset>
+                    <Legend> Login Page  </Legend>
+                -->
+            <p style="font-family: 'Arial'"> <label>EMAIL ID </label> : <input type="text" placeholder=" emailid" ng-model="user.email" required></p>
+            <br>
+            <p style="font-family: 'Arial'"> <label>PASSWORD</label> : <input type="password" placeholder="password" ng-model="user.password" required></p>
+            <br>
+            <button type="button">Login</button>
+            <br>
+            <a href="#/Registration"><br> <button type="button" ng-click = "login()"> Sign Up</button> </a>
+            <!-- </fieldset> -->
+        </form>
+    </center>
+</div>
+<!-- </body>
 
-</html>
+</html> -->
