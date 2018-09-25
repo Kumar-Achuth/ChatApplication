@@ -3,7 +3,7 @@ exports=function ConnectDB() {
     console.log("in");
     //Set up default mongoose connection
 
-    var mongoDB = 'mongodb://localhost:27017/demoDb';
+    var mongoDB = 'mongodb://localhost:27017/demoDb/authenticate';
     mongoose.connect(mongoDB);
     // var db = mongoose.connection; 
     mongoose.connection.on('open',function() {

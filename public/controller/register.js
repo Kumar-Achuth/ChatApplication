@@ -1,9 +1,9 @@
-var ChatApp = angular.module('registerController', []);
-ChatApp.controller('registerCtrl', function($scope, $http) {
-    console.log('register');
+// var ChatApp = angular.module('registerController', []);
+ChatApp.controller('registerCntrl', function($scope, $http) {
+   // console.log('register');
     $scope.user={
-        'firstName': '',
-        'lastName': '',
+        'firstname': '',
+        'lastname': '',
         'mobile': '',
         'email': '',
         'password': ''

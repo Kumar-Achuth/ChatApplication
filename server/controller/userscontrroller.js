@@ -1,8 +1,51 @@
+exports.login = function (req, res) {
+    const { check } = require('express-validator/check')
+
+    var usermod = require('../model/users');
+    var db = new usermod();
+    var response = {};
+    db.email = req.body.email;
+    // var mail = req.body.email;
+    check('mail').isEmail()
+    var password = require('crypto')
+        .createHash('sha1')
+        .update(req.body.password)
+        .digest('base64');
+        // var pass = password;
+
+    usermod.find({ "email": db.email, password: password }, function (err, result) {
+        console.log("result: " + result);
+        if (err) {
+            response = {
+                "Success": false,
+                "message": "error fetching data"
+            };
+            return res.status(400).send(err);
+        }
+        else {
+            if (result.length > 0) {
+                var response = {
+                    "Success": true,
+                    "message": "Login successfull"
+                };
+                return res.status(200).send(response);
+            }
+            else {
+
+                var response = {
+                    "Success": true,
+                    "message": "Username/Password Incorrect"
+                };
+                return res.status(401).send(response);
+            }
+        }
+    });
+}
 exports.registration = function (req, res) {
     var usermod = require('../model/users');
     var db = new usermod();
     var response = {};
-    const { check } = require('express-validator/check')
+    // const { check } = require('express-validator/check')
     db.email = req.body.email;
     var mail = req.body.email;
     check(mail).isEmail()
@@ -12,9 +55,9 @@ exports.registration = function (req, res) {
         .update(req.body.password)
         .digest('base64');
     db.firstname = req.body.firstname;
-    check(firstname).isUppercase();
+    // check(firstname).isUppercase();
     db.lastname = req.body.lastname;
-    check('lastname ').isUppercase();
+    // check('lastname ').isUppercase();
     db.mobile = req.body.mobile;
 
     // var password = req.body.password
@@ -46,49 +89,6 @@ exports.registration = function (req, res) {
                 }
                 return res.status(202).send(response);
             });
-        }
-    });
-}
-exports.login = function (req, res) {
-    const { check } = require('express-validator/check')
-
-    var usermod = require('../model/users');
-    var db = new usermod();
-    var response = {};
-    db.email = req.body.email;
-    var mail = req.body.email;
-    check('mail').isEmail()
-    var password = require('crypto')
-        .createHash('sha1')
-        .update(req.body.password)
-        .digest('base64');
-        var pass = password;
-
-    usermod.find({ email: mail, password: pass }, function (err, result) {
-        console.log("result: " + result);
-        if (err) {
-            response = {
-                "Success": false,
-                "message": "error fetching data"
-            };
-            return res.status(400).send(err);
-        }
-        else {
-            if (result.length > 0) {
-                var response = {
-                    "Success": true,
-                    "message": "login successful"
-                };
-                return res.status(200).send(response);
-            }
-            else {
-
-                var response = {
-                    "Success": true,
-                    "message": "invalid"
-                };
-                return res.status(401).send(response);
-            }
         }
     });
 }

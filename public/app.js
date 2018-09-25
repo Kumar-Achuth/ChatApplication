@@ -1,4 +1,4 @@
-var ChatApp = angular.module('ChatApp', ['ui.router','registerController', 'loginController']);
+var ChatApp = angular.module('ChatApp', ['ui.router']);
 
 ChatApp.config(function ($stateProvider, $urlRouterProvider) {
 
@@ -14,6 +14,6 @@ ChatApp.config(function ($stateProvider, $urlRouterProvider) {
         .state('Login', {
             url: '/Login',
             templateUrl: 'template/Login.html',
-            controller : 'loginCntrl'
+            controller : 'loginCtrl'
         })
 });

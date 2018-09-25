@@ -11,7 +11,7 @@
 
 
     <div>
-        <p> ChatApp <img src="../asset/Images/images.png" alt="image not found" height=":50px" width="50px"> </p>
+        <p> ChatApp <img src="../asset/Images/images.png" alt="image not found" height=":40px" width="40px"> </p>
     </div>
     <center>
         <br><br><br>
@@ -27,10 +27,11 @@
             <p style="font-family: 'Arial'"> <label>EMAIL ID </label> : <input type="text" placeholder=" emailid" ng-model="user.email" required></p>
             <br>
             <p style="font-family: 'Arial'"> <label>PASSWORD</label> : <input type="password" placeholder="password" ng-model="user.password" required></p>
+            <br>    
+            <!-- <button type="button">Login</button> -->
+            <a href="#!/Registration"><br> <button type="button" value= "Submit"> Sign Up</button> </a>
             <br>
-            <button type="button">Login</button>
-            <br>
-            <a href="#/Registration"><br> <button type="button" ng-click = "login()"> Sign Up</button> </a>
+            <a href = "#/Home"><br>  <button type = "button" ng-click = "login()"> Login </button> </a>
             <!-- </fieldset> -->
         </form>
     </center>
