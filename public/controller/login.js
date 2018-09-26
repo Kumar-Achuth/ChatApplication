@@ -1,5 +1,5 @@
 // var ChatApp = angular.module('loginController', []);
-ChatApp.controller('loginCtrl', function($scope, $http) {
+ChatApp.controller('loginCtrl', function($scope, $http , $state) {
 
     console.log('login');
     $scope.user={
@@ -14,20 +14,23 @@ ChatApp.controller('loginCtrl', function($scope, $http) {
         url: '/login',
         data: $scope.user
     }).then(function(response){
-        console.log(response)
-        console.log(response.data.Success);
+        // console.log(response)
+        // console.log(response.data.Success);
         
         if(response.data.Success==true){
-            console.log("Login Succesfull");
+            console.log(response.data.message);
             $scope.message="Login Successful";
-        // $state.go('Chat')
+         $state.go('Home');
 
         }
         else if(response.data.Success==false){
             console.log("Username/Password Incorrect");
             $scope.message="Login Unsuccessful"
         }
+    },function(response){
+        console.log(response)
+        $scope.message= response.data.message;
+        
     })
     }
-
 });

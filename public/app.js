@@ -16,4 +16,9 @@ ChatApp.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: 'template/Login.html',
             controller : 'loginCtrl'
         })
+        .state('Home',{
+            url : '/Home',
+            templateUrl : '/template/Home.html',
+            controller : 'HomeCtrl'
+        })
 });

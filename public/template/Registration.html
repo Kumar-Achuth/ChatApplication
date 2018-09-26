@@ -1,7 +1,7 @@
 <div>
 
     <div id="logo">
-        <p>ChatApp <img src="../asset/Images/images.png" alt="image not found" height=":40px" width="40px"> </p>
+        <p>ChatApp <img src="../asset/Images/images.png" alt="image not found" height=":20px" width="20px"> </p>
     </div>
     <link rel="stylesheet" href="../asset/stylesheet.css">
     <center>
@@ -13,7 +13,7 @@
         </h3>
         <br>
 
-        <form action="#!/login">
+        <form >
             <!-- <fieldset>
                         <legend> Sign up </legend> -->
 
@@ -21,17 +21,21 @@
             <br>
             <p><label>LAST NAME</label> : <input type="text" placeholder="LASTNAME" ng-model="user.lastname" required></p>
             <br>
-            <p> <label>MAIL ID</label> : <input type="text" placeholder="ex : jeeva@gmail.com" ng-model="user.email" required></p>
+            <p> <label>MAIL ID</label> : <input type="email" placeholder="ex : jeeva@gmail.com" ng-model="user.email" required></p>
             <br>
             <p><label>PHONE NUMBER</label> : <input type="number" placeholder="PHONE NUMBER" ng-model="user.mobile "required></p>
             <br>
             <p><label>CREATE PASSWORD</label> : <input type="password" placeholder="Password" ng-model="user.password" required></p>
             <br>
             <button type="Reset" value= "Reset">Reset </button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-            <input  type="submit" value = "Submit" ng-click = "register()">
+            <button  type="submit" value = "Submit" ng-click = "register()" > Submit </button>
             <br><br>
-            <!-- </fieldset> -->
         </form>
+            <a href = "#/Login"> Click Here For existing Account </a> 
+            <br><br>
+            <p>{{message}}</p>
+            <!-- </fieldset> -->
+      
 
     </center>
     <!-- </body> -->

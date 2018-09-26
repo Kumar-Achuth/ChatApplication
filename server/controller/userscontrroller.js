@@ -92,3 +92,31 @@ exports.registration = function (req, res) {
         }
     });
 }
+exports.listOfUsers=function (req,res) {
+    // return res.status(200).send("all good");
+    var auth = require("../router/authRouter.js")
+    var userModel = require('../model/users');
+    var response = {};
+    var arrList=[];
+    var userid=req.params.id;
+    userModel.find({"_id":{$ne:userid }},function (err,data) {
+        console.log(data);
+        for(key in data){
+                arrList.push(response={email:data[key].email,
+                                        userid:data[key]._id});
+        }
+        if(err)
+            {
+                response={ "error":true,
+                            "message":"error retrieving data"
+                }
+            }
+            else{
+                response={
+                    "error":false,
+                    "message":arrList
+                }
+            }
+        return res.status(200).send(response);
+    })
+}

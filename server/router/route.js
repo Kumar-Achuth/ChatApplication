@@ -1,6 +1,10 @@
 var express = require('express');
 var router = express.Router();
 var app = express();
+var auth = require("../router/authRouter.js")
+var jwt = require('jsonwebtoken');
+// var bcrypt = require('bcryptjs');
+var config = require('../config/auth.js');
 var users = require('../controller/userscontrroller')
 
 const { check, validationResult } = require('express-validator/check');
@@ -9,7 +13,7 @@ var usermod = require('../model/users');
 // var validator=require('express-validator');
 var db = new usermod();
 var response = {};
-
+router.use('/auth', auth)
 router.post('/login', [
     check('email').isEmail(),
     check('password').isLength({ min: 3 })
@@ -34,17 +38,21 @@ router.post('/login', [
             return res.status(400).send(err);
         }
         else {
+            var token = jwt.sign({ id: db._id }, config.secret, {
+                expiresIn: 86400 // expires in 24 hours
+              });
             if (result.length > 0) {
                 var response = {
                     "Success": true,
-                    "message": "Login successfull"
+                    "message": "Login successfull","token" : token ,
+                    "userid" : result[0]._id
                 };
                 return res.status(200).send(response);
             }
             else {
 
                 var response = {
-                    "Success": true,
+                    "Success": false,
                     "message": "Username/Password Incorrect"
                 };
                 return res.status(401).send(response);
@@ -102,7 +110,8 @@ router.post('/register', [
                     }
                 }
                 else {
-                    response = { "error": false, "message": "User Has been successfully registered. Data has been successfully added to the database  " }
+                    response = { "error": false, "message": "User Has been successfully registered. Data has been successfully added to the database  "}
+                
                 }
                 return res.status(202).send(response);
             });
