@@ -11,7 +11,7 @@ exports.login = function (req, res) {
         .createHash('sha1')
         .update(req.body.password)
         .digest('base64');
-        // var pass = password;
+    // var pass = password;
 
     usermod.find({ "email": db.email, password: password }, function (err, result) {
         console.log("result: " + result);
@@ -92,31 +92,33 @@ exports.registration = function (req, res) {
         }
     });
 }
-exports.listOfUsers=function (req,res) {
+exports.listOfUsers = function (req, res) {
     // return res.status(200).send("all good");
     var auth = require("../router/authRouter.js")
     var userModel = require('../model/users');
     var response = {};
-    var arrList=[];
-    var userid=req.params.id;
-    userModel.find({"_id":{$ne:userid }},function (err,data) {
+    var arrList = [];
+    var userid = req.params.id;
+    userModel.find({ "_id": { $ne: userid } }, function (err, data) {
         console.log(data);
-        for(key in data){
-                arrList.push(response={email:data[key].email,
-                                        userid:data[key]._id});
+        for (key in data) {
+            arrList.push(response = {
+                email: data[key].email,
+                userid: data[key]._id
+            });
         }
-        if(err)
-            {
-                response={ "error":true,
-                            "message":"error retrieving data"
-                }
+        if (err) {
+            response = {
+                "error": true,
+                "message": "Error Fetching data"
             }
-            else{
-                response={
-                    "error":false,
-                    "message":arrList
-                }
+        }
+        else {
+            response = {
+                "error": false,
+                "message": arrList
             }
+        }
         return res.status(200).send(response);
     })
 }

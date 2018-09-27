@@ -1,6 +1,6 @@
 body
 {
-        background-image: url("../asset/Images/original.jpeg")  
+        background-image: url('../asset/Images/original.jpeg')
 }
 #hom
 {
@@ -13,7 +13,7 @@ text-align: right
 p
 {
     font-family: 'Arial', Helvetica, sans-serif;
-    size: 40px;
+    size: 30px;
     color :black
 }
 #logo
@@ -33,7 +33,7 @@ text-align: justify
     margin-right: 0;
     margin-left: 0;
     /* opacity: 0.4; */
-    width : 600px;
+    width : 900px;
 
     background-color: darkcyan;
 
@@ -51,38 +51,111 @@ text-align: justify
     height: 500px;
 }
  #user1{
-     float: left;
+    top: 0pc;
     background-color: lightgrey;
     width: 250px;
     height : 500px;
     border: 5px solid green;
     padding: 25px;
     margin: 25px;
-    top:4;
+;
 } 
 #header {
-    float: right;
-    background-color:black;
-    padding: 30px;
+  opacity: 0.4;
+    background-color:white;
+    padding: 400px;
     text-align: center;
     font-size: 35px;
     color: red;
 }
 #division {
-    float: right;
-    width: 320px;
+    width: 500px;
     padding: 10px;
-    border: 5px solid gray;
+    border: 5px seagreen;
     margin: 10;
     top: 100px; 
 }
-.box {
+#box {
     float: right;
     text-align: right;
     float: left;
-    width: 200px;
+    width: 240px;
+    height: 10px;
     margin-left: 10px;
     margin-top: 10px;
-    padding: 5px;
-    border: 2px solid blue;
+    padding: 10px;
+    border: 1px solid blue;
+}
+#box1 {
+    float: right;
+    text-align: right;
+    float: left;
+    width: 720px;
+    height: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid blue;
+}
+#container{
+    opacity: 0.6;
+    width: 1100px;
+    background-color:white;
+}
+/* #header{
+    width: 600px;
+    height: 120px;
+    background-color:greenyellow;
+} */
+#area{
+    width: 1100px;
+    height:700px;
+    background-color:red(90, 99, 90);
+}
+#leftarea{
+    float: left;
+    width: 300px;
+    height: 700px;
+    background-color:black;
+}
+#rightarea{
+    float: right;
+    width: 790px;
+    height: 700px;
+    background-color:black;
+}
+#users{
+    /* margin: 2px; */
+    width: 280px;
+    height: 700px;
+    background-color:lightgrey;
+}
+#messagebox{
+    
+    width: 770px;
+    height: 590px;
+    background-color:lightgray;
+}
+#typing{
+    
+    width: 770px;
+    height: 100px;
+    background-color:lightblue;
+}
+#typingmessage{
+    float: left;
+    width: 640px;
+    height: 95px;
+    background-color:red;
+}
+#send{
+    float: right;
+    width: 100px;
+    height: 95px;
+    background-color:gray;
+}
+input[type=text],select {
+    width: 600px;
+    height : 90px;
+    background-color: white;
 }

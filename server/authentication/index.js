@@ -1,6 +1,6 @@
 var jwt = require('jsonwebtoken');
-const object = ("../config/auth.js");
-secret = object.secret;
+const object = require('../config/auth.js');
+const secret = object.secret;
 console.log(secret)
 var auth = function (req, res, next) {
     //next();

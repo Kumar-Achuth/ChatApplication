@@ -20,10 +20,11 @@ ChatApp.controller('loginCtrl', function($scope, $http , $state) {
         if(response.data.Success==true){
             console.log(response.data.message);
             $scope.message="Login Successful";
+            localStorage.setItem('token',response.data.token);
          $state.go('Home');
 
         }
-        else if(response.data.Success==false){
+        else if(response.data.Success==true){
             console.log("Username/Password Incorrect");
             $scope.message="Login Unsuccessful"
         }

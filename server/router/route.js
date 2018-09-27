@@ -13,7 +13,7 @@ var usermod = require('../model/users');
 // var validator=require('express-validator');
 var db = new usermod();
 var response = {};
-router.use('/auth', auth)
+router.use('/auth', auth);
 router.post('/login', [
     check('email').isEmail(),
     check('password').isLength({ min: 3 })
@@ -119,6 +119,7 @@ router.post('/register', [
     });
 
 });
+
 app.use('/', router);
 
 // ConnectDB();
