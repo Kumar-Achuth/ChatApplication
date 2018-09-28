@@ -14,24 +14,37 @@
         <p> ChatApp <img src="../asset/Images/images.png" alt="image not found" height=":40px" width="40px"> </p>
     </div>
     <center>
-        <br><br><br>
+
+        <div id="design3">
+            <center>  <p>Welcome To The Login Page</p> </center>
+        </div>
+        <br><br>
+
+
+
         <p>
             <h1>
                 <p>Login</p>
             </h1></b>
         </p>
-        <form>
+        <form name="SaveForm">
             <!-- <fieldset>
                     <Legend> Login Page  </Legend>
                 -->
-            <p style="font-family: 'Arial'"> <label>EMAIL ID </label> : <input type="email" placeholder=" emailid" ng-model="user.email" required></p>
+            <p style="font-family: 'Arial'"> <label>EMAIL ID </label> : <input type="email" placeholder=" emailid"
+                    ng-model="user.email" maxlength="100" required ng-pattern="/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/"
+                    required></p>
+            <span style="color:darkred" ng-show="SaveForm.email.$dirty && SaveForm.email.$invalid" class="ng-hide">
+                Please Enter Valid Email.!
+            </span>
             <br>
-            <p style="font-family: 'Arial'"> <label>PASSWORD</label> : <input type="password" placeholder="password" ng-model="user.password" required></p>
-            <br>    
+            <p style="font-family: 'Arial'"> <label>PASSWORD</label> : <input type="password" placeholder="password"
+                    ng-model="user.password" required></p>
+            <br>
             <!-- <button type="button">Login</button> -->
-            <a href="#!/Registration"><br> <button type="button" value= "Submit"> Sign Up</button> </a>
+            <a href="#!/Registration"><br> <button type="button" value="Submit"> Sign Up</button> </a>
             <br>
-            <br>  <button type = "button" ng-click = "login()"> Login </button>
+            <br> <button type="button" ng-click="login()"> Login </button>
             <!-- </fieldset> -->
         </form>
         <br><br>

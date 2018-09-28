@@ -72,6 +72,7 @@ router.post('/register', [
     if (!errors.isEmpty()) {
         return res.status(422).json({ errors: errors.array() });
     }
+    var db = new usermod();
     db.firstname = req.body.firstname;
     db.lastname = req.body.lastname;
     db.mobile = req.body.mobile;
@@ -100,7 +101,7 @@ router.post('/register', [
             return res.status(404).send(response);
         }
         else {
-            // console.log(db.email)
+            console.log(db.email)
             // console.log(db.firstname)
             db.save(function (err) {
                 if (err) {

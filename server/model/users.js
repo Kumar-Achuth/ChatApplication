@@ -1,5 +1,4 @@
 var mongoose = require("mongoose");
-
 //var connect= require('../config/config');
 mongoose.connect('mongodb://localhost:27017/demoDb', { useNewUrlParser: true });
 // create instance of Schema

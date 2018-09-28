@@ -102,8 +102,9 @@ exports.listOfUsers = function (req, res) {
     userModel.find({ "_id": { $ne: userid } }, function (err, data) {
         console.log(data);
         for (key in data) {
-            arrList.push(response = {
+            arrList.push({
                 email: data[key].email,
+                name : data[key].firstname,
                 userid: data[key]._id
             });
         }

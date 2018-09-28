@@ -8,7 +8,7 @@
     <center>
         <form>
             <div id="design">
-                <p> Welcome to Home Page </p>
+                <p>  Welcome to Home Page </p>
             </div>
         </form>
     </center>
@@ -23,34 +23,49 @@
 
                 <div id="leftarea">
                     <div id="users">
-                        <div id = "box">
-    <center> Contacts </center>
+                        <div id="design2">
+                            <center>
+                                <p>Contacts</p>
+                                
+                            </center>
                         </div>
-                    
+                        <hr>
+                       
+                        <div id="design5">
+                                <div>
+                                        <ol>
+                                       <li ng-repeat = "key in arr"> {{key}} <hr></li>
+                                    </ol>
+                                   
+                                    </div>
+                        </div>
                     </div>
                 </div>
                 <div id="rightarea">
                     <div id="messagebox">
-                        <div id = "box1">
-                        <center> Message Box</center>
-                    </div>
+                        <div id="design1">
+                            <center>
+                              <h3> <p>Message Box </p></h3>
+                            </center>
+                        </div>
+                        <hr>
+                        <div id="design4">
+                        </div>
                     </div>
                     <div id="typing">
                         <div id="typingmessage">
-                            <div id = "input"></div>
+                            <div id="type">
+                                <textarea rows="6" cols="81" placeholder="Type Your Message"></textarea></div>
+                            <div id="input"></div>
                         </div>
-                        <div id="send"> 
-                                <button type="Send" value= "Send" style="height: 100" style="width : 100 "  >Send  </button>
+                        <div id="send">
+                            <button type="Send" value="Send" style="height: 100" style="width : 100 "> Send </button>
                         </div>
                     </div>
                 </div>
                 <!-- </div> -->
 
             </div>
-
-
-
-
         </div>
     </center>
 
