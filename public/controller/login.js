@@ -17,20 +17,20 @@ ChatApp.controller('loginCtrl', function ($scope, $http, $state) {
             // console.log(response)
             // console.log(response.data.Success);
 
-            if (response.data.Success == true) {
+            if (response.data.Success == true) {   // check for the response from back end 
                 console.log(response.data.message);
-                $scope.message = "Login Successful";
+                $scope.message = "Login Successful";  // if the login is successfull then true 
                 var id = response.data.userid
-                localStorage.setItem('userid', id);
+                localStorage.setItem('userid', id);  // set the userid in the local storage 
                 var token = response.data.token
-                localStorage.setItem('token', token);
+                localStorage.setItem('token', token);  // set the token in the local storage 
 
                 $state.go('Home');
 
             }
             else if (response.data.Success == true) {
-                console.log("Username/Password Incorrect");
-                $scope.message = "Login Unsuccessful"
+                console.log("Username/Password Incorrect");  // check for the condition in the back end 
+                $scope.message = "Login Unsuccessful"// if the condition is false display incorrect password 
             }
         }, function (response) {
             console.log(response)

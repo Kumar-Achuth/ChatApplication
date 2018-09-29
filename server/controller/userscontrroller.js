@@ -104,7 +104,7 @@ exports.listOfUsers = function (req, res) {
         for (key in data) {
             arrList.push({
                 email: data[key].email,
-                name : data[key].firstname,
+                name : data[key].firstname + ' ' +data[key].lastname ,
                 userid: data[key]._id
             });
         }

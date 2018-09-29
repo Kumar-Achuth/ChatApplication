@@ -1,4 +1,4 @@
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> -->
 <div>
 
     <div id="logo">
@@ -13,12 +13,9 @@
             <p>ACCOUNT CREATION </p>
         </h3>
         <form name="SaveForm">
-            <!-- <form> -->
-            <!-- <fieldset>
-                        <legend> Sign up </legend> -->
             <div>
                 <p><label>FIRST NAME</label> : <input type="text" placeholder="FIRSTNAME" ng-model="user.firstname"
-                        minlength="3" maxlength="60" ng-pattern="/^[a-zA-Z. ]*[a-zA-Z]{1,60}$/" name="name" required  , spellcheck="true"></p>
+                        minlength="3" maxlength="30" ng-pattern="/^[a-zA-Z. ]*[a-zA-Z]{1,60}$/" name="name" required  , spellcheck="true"></p>
                 <span style="color:red" ng-show="SaveForm.name.$dirty && SaveForm.name.$invalid" class="ng-hide">
                     Please Enter Valid Name.!
                 </span>
@@ -26,7 +23,7 @@
             <br>
             <div>
                 <p><label>LAST NAME</label> : <input type="text" placeholder="LASTNAME" ng-model="user.lastname"
-                        minlength="3" maxlength="60" ng-pattern="/^[a-zA-Z. ]*[a-zA-Z]{1,60}$/" name="lastname"
+                        minlength="3" maxlength="30" ng-pattern="/^[a-zA-Z. ]*[a-zA-Z]{1,60}$/" name="lastname"
                         required></p>
                 <span style="color:darkred" ng-show="SaveForm.lastname.$dirty && SaveForm.lastname.$invalid" class="ng-hide">
                     Please Enter Valid Name.!
@@ -43,11 +40,12 @@
             <br>
             <div>
                 <p><label>PHONE NUMBER</label> : <input type="text" placeholder="PHONE NUMBER" ng-model="user.mobile "
-                        maxlength="10" ng-pattern="/^[7-9][0-9]{9}$/" name="mobileno" required  ></p>
+                     maxlength="10" pattern="\d{3}[\-]\d{3}[\-]\d{4}"  name="mobileno" required  ></p>
                 <span style="color:darkred" ng-show="SaveForm.mobileno.$dirty && SaveForm.mobileno.$invalid" class="ng-hide">
                     Please Enter Valid Mobile No.!
                 </span>
             </div>
+
             <br>
             <p><label>CREATE PASSWORD</label> : <input type="password" placeholder="Password" ng-model="user.password"
                     minlength="6" maxlength="10" required></p>
@@ -56,12 +54,10 @@
             <button type="submit" value="Submit" ng-click="register()"> Submit </button>
             <br><br>
         </form>
-        <a  href="#/Login"><p>Click Here For existing Account</p> </a>
+        <a  href="#!/Login"><p>Click Here For existing Account</p> </a>
         <br>
         <p>{{message}}</p>
-        <!-- </fieldset> -->
-
 
     </center>
-    <!-- </body> -->
+
 </div>

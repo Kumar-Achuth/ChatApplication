@@ -1,43 +1,44 @@
 <div>
     <div id="hom"></div>
-    <link rel="stylesheet" href="../asset/stylesheet.css">
+    <link rel="stylesheet" href="../asset/stylesheet.css"> 
     <div>
         <p> ChatApp <img src="../asset/Images/images.png" alt="image not found" height=":20px" width="20px"> </p>
     </div>
-
     <center>
         <form>
             <div id="design">
-                <p>  Welcome to Home Page </p>
+                <p> Welcome to Home Page </p>
             </div>
         </form>
     </center>
-
     <div id="log">
         <a href=#/Login> <button type="button " value=" Logout"> Logout </button></a>
     </div>
     <center>
         <div id="container">
-            <!-- <div id = "header"> -->
             <div id="area">
-
                 <div id="leftarea">
                     <div id="users">
                         <div id="design2">
                             <center>
-                                <p>Contacts</p>
-                                
+                                <p>
+                                    <font Color="white">Contacts</font>
+                                </p>
                             </center>
                         </div>
                         <hr>
-                       
+
                         <div id="design5">
-                                <div>
-                                        <ol>
-                                       <li ng-repeat = "key in arr"> {{key}} <hr></li>
+                            <div>
+                                <div id="col">
+                                    <ol>
+                                        <li ng-repeat="key in arr">
+                                            <font color="black"> &nbsp{{key}}</font>
+                                            <hr>
+                                        </li>
                                     </ol>
-                                   
-                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -45,7 +46,9 @@
                     <div id="messagebox">
                         <div id="design1">
                             <center>
-                              <h3> <p>Message Box </p></h3>
+                                <h3>
+                                    <p>Message Box </p>
+                                </h3>
                             </center>
                         </div>
                         <hr>
@@ -59,14 +62,11 @@
                             <div id="input"></div>
                         </div>
                         <div id="send">
-                            <button type="Send" value="Send" style="height: 100" style="width : 100 "> Send </button>
+                            <button type="Send" value="Send"> Send </button>
                         </div>
                     </div>
                 </div>
-                <!-- </div> -->
-
             </div>
         </div>
     </center>
-
 </div>

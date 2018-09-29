@@ -1,7 +1,4 @@
-// ChatApp.controller('HomeCtrl', function($scope, $http) {
-// localStorage.getItem('token');
-// localStorage.getItem('userid');
-// })
+
 ChatApp.controller('HomeCtrl', function ($scope, $http, $location) {
     var mytoken = (localStorage.getItem("token"));
     var id = localStorage.getItem("userid");
@@ -19,15 +16,10 @@ ChatApp.controller('HomeCtrl', function ($scope, $http, $location) {
             arr.push(response.data.message[i].name)
 
         }
-        console.log(arr);
+        // console.log(arr);
     })
     $scope.arr = arr;
-    $scope.logout = function () {
-        localStorage.removeItem(token);
-        localStorage.removeItem(userid);
-        $location.path('/login')
-
-    }
-
+  
+var socket = io.connect('http://localhost:4000');
 
 })

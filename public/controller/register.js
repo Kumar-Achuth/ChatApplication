@@ -22,7 +22,7 @@ ChatApp.controller('registerCntrl', function ($scope, $http) {
             if (response.data.error == false) {
                 console.log(response.data.message);
                 $scope.message = "Registration Successful";
-                // $state.go("/Login")
+                $state.go("/Login")
             }
             else if (response.data.error == true) {
                 console.log("Invalid Credentials")

@@ -44,7 +44,8 @@ router.post('/login', [
             if (result.length > 0) {
                 var response = {
                     "Success": true,
-                    "message": "Login successfull","token" : token ,
+                    "message": "Login successfull",
+                    "token" : token ,
                     "userid" : result[0]._id
                 };
                 return res.status(200).send(response);

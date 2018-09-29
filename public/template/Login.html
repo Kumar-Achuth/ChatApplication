@@ -1,11 +1,3 @@
-<!-- <!DOCTYPE html> -->
-<!-- <html> -->
-
-<!-- <head>
-    <title> Login Page </title>
-</head> -->
-
-<!-- <body> -->
 <div>
     <link rel="stylesheet" href="../asset/stylesheet.css">
 
@@ -16,21 +8,17 @@
     <center>
 
         <div id="design3">
-            <center>  <p>Welcome To The Login Page</p> </center>
+            <center>
+                <p>Welcome To The Login Page</p>
+            </center>
         </div>
         <br><br>
-
-
-
         <p>
             <h1>
                 <p>Login</p>
             </h1></b>
         </p>
         <form name="SaveForm">
-            <!-- <fieldset>
-                    <Legend> Login Page  </Legend>
-                -->
             <p style="font-family: 'Arial'"> <label>EMAIL ID </label> : <input type="email" placeholder=" emailid"
                     ng-model="user.email" maxlength="100" required ng-pattern="/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/"
                     required></p>
@@ -41,16 +29,11 @@
             <p style="font-family: 'Arial'"> <label>PASSWORD</label> : <input type="password" placeholder="password"
                     ng-model="user.password" required></p>
             <br>
-            <!-- <button type="button">Login</button> -->
             <a href="#!/Registration"><br> <button type="button" value="Submit"> Sign Up</button> </a>
             <br>
             <br> <button type="button" ng-click="login()"> Login </button>
-            <!-- </fieldset> -->
         </form>
         <br><br>
         <p>{{message}}</p>
     </center>
 </div>
-<!-- </body>
-
-</html> -->

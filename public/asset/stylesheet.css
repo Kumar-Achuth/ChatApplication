@@ -32,10 +32,9 @@ text-align: justify
     margin-bottom: 0;
     margin-right: 0;
     margin-left: 0;
-
+/* opacity : 0.6; */
     width : 1000px;
     background-color: darkcyan;
-
 }
 #user{
     background-color: lightgrey;
@@ -96,7 +95,7 @@ text-align: justify
     border: 1px solid blue;
 }
 #container{
-    opacity: 0.6;
+    /* opacity: 0.6; */
     width: 1100px;
     background-color:white;
 }
@@ -112,13 +111,14 @@ text-align: justify
     float: left;
     width: 300px;
     height: 700px;
-    background-color:black;
+    overflow : scroll;
+    background-color:lightseagreen;
 }
 #rightarea{
     float: right;
     width: 790px;
     height: 700px;
-    background-color:black;
+    background-color:darkkhaki;
 }
 #users{
     /* margin: 2px; */
@@ -127,13 +127,11 @@ text-align: justify
     background-color:lightgrey;
 }
 #messagebox{
-    
     width: 770px;
     height: 590px;
     background-color:lightgray;
 }
 #typing{
-    
     width: 770px;
     height: 100px;
     background-color:lightblue;
@@ -148,7 +146,7 @@ text-align: justify
     padding-top: 10px;
     float: right;
     width: 100px;
-    height: 97px;
+    height: 91px;
     background-color:black;
 }
 /* input[type=text],select {
@@ -165,9 +163,7 @@ text-align: justify
     /* opacity: 0.4; */
     width : 750px;
     height: 50px;
-
     background-color: darkcyan;
-
 }
 #design2 {
     border: 2px solid black;
@@ -178,9 +174,7 @@ text-align: justify
     /* opacity: 0.4; */
     width : 270px;
     height: 50px;
-
     background-color: darkcyan;
-
 }
 #design3 {
     border: 2px solid black;
@@ -191,9 +185,7 @@ text-align: justify
     /* opacity: 0.4; */
     width : 730px;
     height: 50px;
-
     background-color: darkcyan;
-
 }
 #design4 {
     border: 2px solid black;
@@ -204,9 +196,7 @@ text-align: justify
     /* opacity: 0.4; */
     width : 750px;
     height: 510px;
-
-    background-color:darkred;
-
+    background-color:white;
 }
 #design5 {
     border: 2px solid black;
@@ -217,7 +207,9 @@ text-align: justify
     /* opacity: 0.4; */
     width : 270px;
     height: 620px;
-
-    background-color: whitesmoke
-
+    background-color: white
+}
+#col
+{
+  text-align: left; 
 }
