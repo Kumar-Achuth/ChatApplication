@@ -13,6 +13,7 @@ var usermod = require('../model/users');
 // var validator=require('express-validator');
 var db = new usermod();
 var response = {};
+//  router.get('/users/getmsgs', users.getmsgs)
 router.use('/auth', auth);
 router.post('/login', [
     check('email').isEmail(),
@@ -39,19 +40,22 @@ router.post('/login', [
         }
         else {
             var token = jwt.sign({ id: db._id }, config.secret, {
-                expiresIn: 86400 // expires in 24 hours
+                // expiresIn: 86400 // expires in 24 hours
               });
             if (result.length > 0) {
                 var response = {
                     "Success": true,
                     "message": "Login successfull",
                     "token" : token ,
-                    "userid" : result[0]._id
-                };
+                    "userid" : result[0]._id,
+                    "name": result[0].email ,
+                    "username" : result[0].firstname + ' ' + result[0].lastname
+                 }
+
+                 //console.log(result[0].email)
                 return res.status(200).send(response);
             }
             else {
-
                 var response = {
                     "Success": false,
                     "message": "Username/Password Incorrect"

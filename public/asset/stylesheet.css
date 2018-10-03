@@ -7,8 +7,8 @@ body
     background-image: url("../asset/Images/home.jpg")
 }
 #log
-{
-text-align: right
+{float: right;
+  /* padding-bottom: 10px; */
 }   
 p
 {
@@ -30,10 +30,11 @@ text-align: justify
     border: 2px solid black;
     margin-top: 0;
     margin-bottom: 0;
-    margin-right: 0;
-    margin-left: 0;
+    margin-right: 0px;
+    margin-left: 0px;
 /* opacity : 0.6; */
-    width : 1000px;
+    width : 1250px;
+    height : 40px;
     background-color: darkcyan;
 }
 #user{
@@ -97,6 +98,7 @@ text-align: justify
 #container{
     /* opacity: 0.6; */
     width: 1100px;
+    height : 600px;
     background-color:white;
 }
 #type{
@@ -104,49 +106,50 @@ text-align: justify
 }
 #area{
     width: 1100px;
-    height:700px;
+    height:600px;
     background-color:red(90, 99, 90);
 }
 #leftarea{
     float: left;
     width: 300px;
-    height: 700px;
-    overflow : scroll;
+    height: 600px;
+    overflow-y : auto;
     background-color:lightseagreen;
 }
 #rightarea{
     float: right;
     width: 790px;
-    height: 700px;
+    height: 600px;
+    
     background-color:darkkhaki;
 }
 #users{
     /* margin: 2px; */
     width: 280px;
-    height: 700px;
+    height: 600px;
     background-color:lightgrey;
 }
 #messagebox{
     width: 770px;
-    height: 590px;
+    height: 490px;
     background-color:lightgray;
 }
 #typing{
     width: 770px;
     height: 100px;
-    background-color:lightblue;
+    background-color:white;
 }
 #typingmessage{
     float: left;
     width: 670px;
-    height: 95px;
-    background-color:red;
+    height: 45px;
+    background-color:white;
 }
 #send{
     padding-top: 10px;
     float: right;
     width: 100px;
-    height: 91px;
+    height:91px;
     background-color:black;
 }
 /* input[type=text],select {
@@ -193,10 +196,12 @@ text-align: justify
     margin-bottom: 0;
     margin-right: 0;
     margin-left: 0;
-    /* opacity: 0.4; */
+     opacity: 0.6;
     width : 750px;
-    height: 510px;
+    height: 410px;
+    overflow-y : auto;
     background-color:white;
+    text-align  : left;
 }
 #design5 {
     border: 2px solid black;
@@ -206,10 +211,42 @@ text-align: justify
     margin-left: 0;
     /* opacity: 0.4; */
     width : 270px;
-    height: 620px;
+    height: 520px;
+   
     background-color: white
 }
 #col
 {
   text-align: left; 
+}
+#sideMessagesRight{
+
+    border: 1px solid black;
+    background-color: darkcyan;
+    border-radius: 5px;
+    padding: 12px;
+    margin: 10px;
+    width: 50%;
+    height: 50px;
+    font-size: 12px;
+    color:white;
+    float: right;
+}
+#sideMessagesLeft{
+
+    border: 1px solid black;
+    background-color:whitesmoke;
+    border-radius: 5px;
+    padding: 12px;
+    margin: 10px;
+    width: 50%;
+    height: 50px;
+    font-size: 12px;
+    color:black;
+    float: left;
+}
+#chat
+{
+    padding-left: 10px;
+    float: left;
 }

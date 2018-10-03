@@ -104,7 +104,7 @@ exports.listOfUsers = function (req, res) {
         for (key in data) {
             arrList.push({
                 email: data[key].email,
-                name : data[key].firstname + ' ' +data[key].lastname ,
+                name: data[key].firstname + ' ' + data[key].lastname,
                 userid: data[key]._id
             });
         }
@@ -123,3 +123,55 @@ exports.listOfUsers = function (req, res) {
         return res.status(200).send(response);
     })
 }
+exports.addtodb = function (userid, message, date, username) {
+    var userModel = require('../model/message');
+    var db = new userModel();
+    var response = {};
+    db.userid = userid;
+    db.message = message;
+    db.date = date;
+    db.username = username;
+    db.save(function (err) {
+        if (err) {
+            response = {
+                "error": true,
+                "message": "Error storing data"
+            }
+        }
+        else if (db.message.length>0){
+            response = { "error": false, "message": "Succesfully added to database"}
+        } 
+    });
+    console.log(response)
+}
+exports.getmsgs = function (req, res) {
+    var userModel = require('../model/message');
+    var response = {};
+    userModel.find({}, function (err, data) {
+        if (data.length>0) {
+            response = {
+                "error": false,
+                "message": data,
+
+            }
+            res.status(200).send(response);
+        }
+        else {
+            response = {
+                "error": true,
+                "message": "Something went wrong",
+
+            }
+            console.log(err);
+            res.status(401).send(response);
+        }
+
+    })
+}
+
+
+
+
+
+
+

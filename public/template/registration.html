@@ -15,7 +15,8 @@
         <form name="SaveForm">
             <div>
                 <p><label>FIRST NAME</label> : <input type="text" placeholder="FIRSTNAME" ng-model="user.firstname"
-                        minlength="3" maxlength="30" ng-pattern="/^[a-zA-Z. ]*[a-zA-Z]{1,60}$/" name="name" required  , spellcheck="true"></p>
+                        minlength="3" maxlength="30" ng-pattern="/^[a-zA-Z. ]*[a-zA-Z]{1,60}$/" name="name" required ,
+                        spellcheck="true"></p>
                 <span style="color:red" ng-show="SaveForm.name.$dirty && SaveForm.name.$invalid" class="ng-hide">
                     Please Enter Valid Name.!
                 </span>
@@ -40,7 +41,7 @@
             <br>
             <div>
                 <p><label>PHONE NUMBER</label> : <input type="text" placeholder="PHONE NUMBER" ng-model="user.mobile "
-                     maxlength="10" pattern="\d{3}[\-]\d{3}[\-]\d{4}"  name="mobileno" required  ></p>
+                        maxlength="10" ng-pattern="/^[5-9][0-9]{9}$/" name="mobileno" required></p>
                 <span style="color:darkred" ng-show="SaveForm.mobileno.$dirty && SaveForm.mobileno.$invalid" class="ng-hide">
                     Please Enter Valid Mobile No.!
                 </span>
@@ -54,7 +55,9 @@
             <button type="submit" value="Submit" ng-click="register()"> Submit </button>
             <br><br>
         </form>
-        <a  href="#!/Login"><p>Click Here For existing Account</p> </a>
+        <a href="#!/login">
+            <p>Click Here For existing Account</p>
+        </a>
         <br>
         <p>{{message}}</p>
 

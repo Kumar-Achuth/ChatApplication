@@ -1,0 +1,85 @@
+<div>
+    <div id="hom"></div>
+    <link rel="stylesheet" href="../asset/stylesheet.css">
+    <center>
+        <form>
+            <div id="design">
+                <div id="chat">
+                    <p> ChatApp <img src="../asset/Images/images.png" alt="image not found" height=":20px" width="20px">
+                    </p>
+                </div>
+                <div id="log">
+                    <button type="button " value=" Logout" ng-click='logout()'> Logout </button>
+                </div>
+                <center>
+                    <p> Welcome to Home Page </p>
+                </center>
+            </div>
+        </form>
+    </center>
+    <br>
+    <center>
+        <div id="container">
+            <div id="area">
+                <div id="leftarea">
+                    <div id="users">
+                        <div id="design2">
+                            <center>
+                                <p>
+                                    <font Color="white">Contacts</font>
+                                </p>
+                            </center>
+                        </div>
+                        <hr>
+                        <div id="design5">
+                            <div>
+                                <div id="col">
+                                    <ol>
+                                        <li ng-repeat="key in arr track by $index">
+                                            <font color="black"> &nbsp{{key}}</font>
+                                            <hr>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="rightarea">
+                    <div id="messagebox">
+                        <div id="design1">
+                            <center>
+                                <h3>
+                                    <p>Message Box </p>
+                                </h3>
+                            </center>
+                        </div>
+                        <hr>
+                        <div id="design4">
+                            <div>
+                                <div ng-repeat="chat in msgArr track by $index">
+                                    <p id="sideMessagesLeft" ng-if="currUser != chat.username">{{chat.username}} :
+                                        <span>{{chat.message}}</span><br><br>
+                                        <span>{{chat.date | date: 'medium'}}</span></p>
+                                    <p id="sideMessagesRight" ng-if="currUser == chat.username">{{chat.username}} :
+                                        <span>{{chat.message}}</span><br><br>
+                                        <span>{{chat.date | date: 'medium'}}</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="typing">
+                            <div id="typingmessage">
+                                <div id="type">
+                                    <textarea rows="6" cols="81" placeholder="Type Your Message" ng-model='message'></textarea></div>
+                                <div id="input"></div>
+                            </div>
+                            <div id="send">
+                                <button type="Send" value="Send" ng-click="sendMessage()"> Send </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </center>
+</div>
