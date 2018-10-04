@@ -1,10 +1,10 @@
-var ChatApp = angular.module('ChatApp', ['ui.router','btford.socket-io']);
+var ChatApp = angular.module('ChatApp',['ui.router','btford.socket-io']);
 
 ChatApp.config(function ($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/login');  // route to this url otherwise  
     
-    $stateProvider             // state provider gives current state 
+    $stateProvider                           // state provider gives current state 
 
         .state('registration', {
             url: '/registration',

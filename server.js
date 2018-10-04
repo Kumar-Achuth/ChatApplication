@@ -27,7 +27,17 @@ io.on('connection',function(client){
     client.on('tobackend',function (data) {
         users.addtodb( data.userid, data.message, data.date, data.username);
         io.emit('tofrontend',data)
-    })  
+    })
+    
+io.sockets.on('connection', function (socket) {
+    socket.on('join', function (data) {
+      socket.join(data.username); // We are using room of socket io
+    });
+  })
+  client.on('tosingleperson',function(data){
+      users.singleaddtodb(data.senderName, data.recieverName, data.message, data.senderId, data.recieverId)
+      io.emit(data.recieverId,data)
+  })  
 })
 server.listen(4000);
 console.log("Listening to PORT 4000");

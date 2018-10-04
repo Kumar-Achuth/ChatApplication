@@ -19,14 +19,14 @@
             </h1></b>
         </p>
         <form name="SaveForm">
-            <p style="font-family: 'Arial'"> <label>EMAIL ID </label> : <input type="email" placeholder=" emailid"
+            <p style="font-family:Arial, Helvetica, sans-serif"> <label>EMAIL ID </label> : <input type="email" placeholder=" emailid"
                     ng-model="user.email" maxlength="100" required ng-pattern="/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/"
                     required></p>
             <span style="color:darkred" ng-show="SaveForm.email.$dirty && SaveForm.email.$invalid" class="ng-hide">
                 Please Enter Valid Email.!
             </span>
             <br>
-            <p style="font-family: 'Arial'"> <label>PASSWORD</label> : <input type="password" placeholder="password"
+            <p style="font-family:Arial, Helvetica, sans-serif"> <label>PASSWORD</label> : <input type="password" placeholder="password"
                     ng-model="user.password" required></p>
             <br>
             <a href="#!/registration"><br> <button type="button" value="Submit"> Sign Up</button> </a>

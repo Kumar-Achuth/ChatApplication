@@ -1,6 +1,5 @@
 exports.login = function (req, res) {
     const { check } = require('express-validator/check')
-
     var usermod = require('../model/users');
     var db = new usermod();
     var response = {};
@@ -138,7 +137,7 @@ exports.addtodb = function (userid, message, date, username) {
                 "message": "Error storing data"
             }
         }
-        else if (db.message.length>0){
+        else {
             response = { "error": false, "message": "Succesfully added to database"}
         } 
     });
@@ -148,11 +147,10 @@ exports.getmsgs = function (req, res) {
     var userModel = require('../model/message');
     var response = {};
     userModel.find({}, function (err, data) {
-        if (data.length>0) {
+        if (data) {
             response = {
                 "error": false,
                 "message": data,
-
             }
             res.status(200).send(response);
         }
@@ -160,12 +158,56 @@ exports.getmsgs = function (req, res) {
             response = {
                 "error": true,
                 "message": "Something went wrong",
-
             }
             console.log(err);
             res.status(401).send(response);
         }
-
+    })
+}
+exports.singleaddtodb = function (senderName,recieverName,message,date,senderId,recieverId) {
+    var userModel = require('../model/singlesChat');
+    var db = new userModel();
+    var response = {};
+    db.senderName = senderName;
+    db.recieverName= recieverName;
+    db.message = message;
+    db.date = date;
+    db.senderId= senderId;
+    db.recieverId=recieverId;
+    db.save(function (err) {
+        if (err) {
+            response = {
+                "error": true,
+                "message": "Error storing data"
+            }
+        }
+        else {
+            response = { "error": false, "message": "Succesfully added to database"}
+        } 
+    });
+    console.log(response)
+}
+exports.getSingleMessages = function (req, res) {
+    var userModel = require('../model/singlesChat');
+    var response = {};
+    var recieverId=req.params.recieverId;
+    var senderId=req.params.senderId;
+    userModel.find({$or : [{ "senderId" : senderId, "recieverId" : recieverId },{"recieverId": recieverId,"senderId":senderId}]}, function (err, data) {
+        if (data) {
+            response = {
+                "error": false,
+                "message": data,
+            }
+            res.status(200).send(response);
+        }
+        else {
+            response = {
+                "error": true,
+                "message": "Something went wrong",
+            }
+            console.log(err);
+            res.status(401).send(response);
+        }
     })
 }
 

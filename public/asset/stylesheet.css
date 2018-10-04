@@ -1,18 +1,22 @@
 body
 {
-        background-image: url('../asset/Images/original.jpeg')
+        background-image: url('../asset/Images/original.jpeg');
+        /* background-repeat: no-repeat; */
+        /* background-position: absolute; */
 }
 #hom
 {
     background-image: url("../asset/Images/home.jpg")
 }
 #log
-{float: right;
-  /* padding-bottom: 10px; */
+{
+    float: right;
+  padding-top: 10px;
+  padding-right: 10px;
 }   
 p
 {
-    font-family: 'Arial', Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     size: 30px;
     color :white;
 }
@@ -146,7 +150,7 @@ text-align: justify
     background-color:white;
 }
 #send{
-    padding-top: 10px;
+    /* padding-top: 10px; */
     float: right;
     width: 100px;
     height:91px;
@@ -217,7 +221,8 @@ text-align: justify
 }
 #col
 {
-  text-align: left; 
+    padding-left: 20px;
+  text-align: justify; 
 }
 #sideMessagesRight{
 
@@ -227,10 +232,12 @@ text-align: justify
     padding: 12px;
     margin: 10px;
     width: 50%;
-    height: 50px;
+    height: fit-content;
     font-size: 12px;
     color:white;
     float: right;
+    /* overflow-y : auto; */
+    word-wrap: break-word;
 }
 #sideMessagesLeft{
 
@@ -240,13 +247,21 @@ text-align: justify
     padding: 12px;
     margin: 10px;
     width: 50%;
-    height: 50px;
+    height: fit-content;
     font-size: 12px;
     color:black;
     float: left;
+    /* overflow-y : auto; */
+    word-wrap: break-word;
+
 }
 #chat
 {
     padding-left: 10px;
     float: left;
+    /* padding-bottom: 4px; */
+}
+#names
+{
+    cursor: pointer;
 }

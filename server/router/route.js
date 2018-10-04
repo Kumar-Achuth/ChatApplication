@@ -15,6 +15,7 @@ var db = new usermod();
 var response = {};
 //  router.get('/users/getmsgs', users.getmsgs)
 router.use('/auth', auth);
+// router.use('/auth',auth);
 router.post('/login', [
     check('email').isEmail(),
     check('password').isLength({ min: 3 })
