@@ -16,6 +16,7 @@ var response = {};
 //  router.get('/users/getmsgs', users.getmsgs)
 router.use('/auth', auth);
 // router.use('/auth',auth);
+// router.get('/users/singleChatList/:receiverId/and/:senderId',users.singleChatList);
 router.post('/login', [
     check('email').isEmail(),
     check('password').isLength({ min: 3 })

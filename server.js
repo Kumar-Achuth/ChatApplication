@@ -34,10 +34,12 @@ io.sockets.on('connection', function (socket) {
       socket.join(data.username); // We are using room of socket io
     });
   })
-  client.on('tosingleperson',function(data){
-      users.singleaddtodb(data.senderName, data.recieverName, data.message, data.senderId, data.recieverId)
-      io.emit(data.recieverId,data)
-  })  
+  client.on('singleChatBackend',function(data){
+    console.log(data.receiverId);
+    
+    users.peerMessages(data.senderId,data.senderName,data.receiverId,data.receiverName,data.message,data.date)
+    io.emit(data.receiverId,data);
+}) 
 })
 server.listen(4000);
 console.log("Listening to PORT 4000");

@@ -9,8 +9,8 @@
                     </p>
                 </div>
                 <div id="log">
-                    <button type="button " value=" Logout" ng-click='logout()'> Logout </button>
-                </div>
+                    <a href="#!/home"> <button type="button " value=" Logout" ng-click='close()'>Close </button></a>
+            ''    </div>
                 <center>
                     <p> Welcome to Home Page </p>
                 </center>
@@ -19,7 +19,7 @@
     </center>
     <br>
     <center>
-        <div id="container">
+        <div id="container" ng-controller="singleChatCntrl">
             <div id="area">
                 <div id="leftarea">
                     <div id="users">
@@ -33,16 +33,15 @@
                         <hr>
                         <div id="design5">
                             <div>
-                                <div id="col">
-
-                                    <div ng-repeat="key in arr track by $index">
-                                        <div id="names" ng-click="person(key)">
-                                            <br> {{key.name}}
-                                        </div>
-                                        <hr>
+                            <div id="col">
+                                <div ng-repeat="key in arr track by $index">
+                                    <div id="names" ng-click="person(key.name)">
+                                        <br> {{key.name}}
                                     </div>
+                                    <hr>
                                 </div>
                             </div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -56,32 +55,31 @@
                             </center>
                         </div>
                         <hr>
-                        <div id="design4" >
-                           
-                             <div ng-repeat="chat in msgArr track by $index"> 
-                                <p id="sideMessagesLeft" ng-if="currUser != chat.username">{{chat.username}} :
+                        <div id="design4">
+                            <h4 align="left">Chatting with: {{val}}</h4>
+                            <div ng-repeat="chat in chatlist track by $index">
+                                <p id="sideMessagesLeft" ng-if="currUser != chat.senderName">{{chat.senderName}} :
                                     <span>{{chat.message}}</span><br><br>
                                     <span>{{chat.date | date: 'medium'}}</span></p>
-                                <p id="sideMessagesRight" ng-if="currUser == chat.username">{{chat.username}} :
+                                <p id="sideMessagesRight" ng-if="currUser == chat.senderName">{{chat.senderName}} :
                                     <span>{{chat.message}}</span><br><br>
                                     <span>{{chat.date | date: 'medium'}}</span></p>
                             </div>
-                        </div> 
-                    </div>
-                    <div id="typing">
-                        <div id="typingmessage">
-                            <div id="type">
-                                <textarea rows="6" cols="81" placeholder="Type Your Message" ng-model='message'></textarea></div>
-                            <div id="input"></div>
                         </div>
-                        <div id="send">
-                            <button type="Send" value="Send" ng-click="sendMessage()" style="height : 100px; width : 100px">
-                                Send </button>
+                        <div id="typing">
+                            <div id="typingmessage">
+                                <div id="type">
+                                    <textarea rows="6" cols="81" placeholder="Type Your Message" ng-model='message'></textarea></div>
+                                <div id="input"></div>
+                            </div>
+                            <div id="send">
+                                <button type="Send" value="Send" ng-click="send()" style="height : 100px; width : 100px">
+                                    Send </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-</div>
-</center>
+    </center>
 </div>

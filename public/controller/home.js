@@ -1,4 +1,4 @@
-ChatApp.controller('HomeCtrl', function ($scope, $http, $location, SocketService) {
+ChatApp.controller('HomeCtrl', function ($scope, $http, $location, SocketService, $state) {
     var mytoken = localStorage.getItem("token");
     var id = localStorage.getItem("userid");
     var username = localStorage.getItem("username");
@@ -15,13 +15,19 @@ ChatApp.controller('HomeCtrl', function ($scope, $http, $location, SocketService
             'token': mytoken
         }
     }).then(function (response) {
-        console.log(response.data.message)
-        for (var i = 0; i < (response.data.message).length; i++) {
-            arr.push(response.data.message[i].name)
-        }
-        console.log(arr);
+        // console.log(response.data.message)
+        // for (var i = 0; i < (response.data.message).length; i++) {
+        //     arr.push(response.data.message[i].name)
+        // }
+        // console.log(arr);
+        arr = response.data.message;
+        $scope.arr = arr;
     })
-    $scope.arr = arr;
+    $scope.person=function(userData){
+        localStorage.setItem('rusername',userData.name);
+        localStorage.setItem('ruserId',userData.userid);
+        $location.path('/singleChat');
+    }
 
     $scope.sendMessage = function () {
         SocketService.emit('tobackend', { "userid": id, "message": $scope.message, "date": new Date(), "username": username },$scope.message=null)
